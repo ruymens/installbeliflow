@@ -1,0 +1,33 @@
+/* Center all elements on the page */
+.formdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.formdiv {
+    text-align: center;
+}
+.formdiv img {
+    display: block;
+    margin: 50px auto 20px;
+    width: 500px;
+}
+form {
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}

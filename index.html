@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Installatie</title>
+  <style>
+    body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #094a8f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #073a72;
+}
+
+#message {
+  margin-top: 10px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.error {
+  color: red;
+}
+.logo {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.success {
+  color: green;
+}
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="logo.png" alt="Logo" class="logo">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Gebruikersnaam" required />
+      <input type="password" id="password" placeholder="Wachtwoord" required />
+      <button type="submit">Inloggen</button>
+      <div id="message"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const messageDiv = document.getElementById('message');
+  
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+  
+      // Hardcoded login gegevens
+      const correctUsername = "admin";
+      const correctPassword = "1234";
+  
+      if (username === correctUsername && password === correctPassword) {
+        // Toon downloadlink
+        messageDiv.innerHTML = `
+          <a href="bestand.zip" download style="display: inline-block; margin-top: 20px; padding: 12px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 8px;">
+            Download bestand
+          </a>
+        `;
+        messageDiv.className = ""; // reset class
+      } else {
+        messageDiv.textContent = "Onjuiste gebruikersnaam of wachtwoord.";
+        messageDiv.className = "error";
+      }
+    });
+  </script>
+  <footer class="footer">
+    &copy; Ruy Mens
+  </footer>
+</body>
+</html>

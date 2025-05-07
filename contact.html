@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .form-container img {
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    input[type="email"],
+    textarea {
+      padding: 15px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: none;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #094a8f;
+      outline: none;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 1.2rem;
+      background-color: #094a8f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #073a72;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+    }
+
+    .install-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: #e0e0e0;
+  color: #094a8f;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.install-button:hover {
+  background-color: #ccc;
+}
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <img src="logo.png" alt="Logo">
+    <form action="https://formspree.io/f/myzwwwyq" method="POST">
+        <label for="email">E-mailadres:</label>
+        <input id="email" type="email" name="email" readonly value="test@test.com">
+        
+        <label for="message">Bericht:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Typ hier je bericht..."></textarea>
+        
+        <button type="submit">Verstuur</button>
+    </form>
+    <a href="install.html" class="install-button">Installatiepagina</a>
+  </div>
+</body>
+</html>
